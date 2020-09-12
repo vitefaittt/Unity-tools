@@ -1,0 +1,8 @@
+
+        bool IsSubscribedToDeselect()
+        {
+            foreach (var handler in UnityEditor.Selection.selectionChanged.GetInvocationList())
+                if (handler.Method.Name == "HandleDeselect")
+                    return true;
+            return false;
+        }

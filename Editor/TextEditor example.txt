@@ -1,0 +1,3 @@
+TextEditor te = (TextEditor)GUIUtility.GetStateObject(typeof(TextEditor), GUIUtility.keyboardControl);
+            if (te != null)
+                menu.AddItem(new GUIContent(te.SelectedText), false, () => { Debug.Log("hey"); });

@@ -1,0 +1,12 @@
+Removing curly brackets for single line statements:
+(((?<=[ ]{5}){(?=(\r\n\s*.*\r\n\s*})))|((?<=(((?<=[ ]{5}){\r\n\s*.*);\r\n\s*))}))\r\n
+
+
+Remove all curly brackets:
+({|})\r\n
+
+Remove all parentheses and everything inside them:
+\(((?!\)).)*\)
+
+More than two consecutive blank lines:
+((\r\n\s*)(?=(\r\n\s*){2,}))

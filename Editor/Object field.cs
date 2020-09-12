@@ -1,0 +1,1 @@
+Selection.gameObjects[i] = (GameObject)EditorGUILayout.ObjectField(Selection.gameObjects[i], typeof(GameObject), true);

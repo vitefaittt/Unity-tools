@@ -1,0 +1,15 @@
+__Architecture du projet
+Créer un dossier où on va bosser pour le projet. À faire, car quand on importe des assets ils créent à chaque fois leur dossier, donc c'est le bordel à la racine.
+
+
+__Architecture des scripts
+Mettre les fonctions standard (Start, Update, contructeurs) au début du script, après les variables. Séparer tout ce bloc avec deux lignes en haut et deux lignes en bas.
+
+
+__Autres
+(acessoire) À chaque fois qu'on commence à travailler sur un nouveau script, fermer tous les autres onglets pour s'encombrer d'éléments visuels.
+Désactiver les warnings.
+
+
+__Photon
+Dans Photon, tout repose sur les viewIDs.

@@ -1,0 +1,27 @@
+_Default
+Vector3 leverForward =
+                Vector3.Dot((transform.position - grabbableTarget.transform.position), transform.parent.forward) * transform.parent.forward
+                +
+                Vector3.Dot((transform.position - grabbableTarget.transform.position), transform.parent.up) * transform.parent.up;
+Vector3 leverUp = transform.up; 
+transform.rotation = Quaternion.LookRotation(leverForward, leverUp);
+
+_To clamp the rotation
+            // Rotate self. ---
+            float forwardFactor = Mathf.Clamp(Vector3.Dot((transform.position - grabbableTarget.transform.position), transform.parent.forward), 0, 1);
+            float upwardFactor = Mathf.Clamp(Vector3.Dot((transform.position - grabbableTarget.transform.position), transform.parent.up), -1, 0);
+            if (forwardFactor == 0)
+                wasStoppedFacingUp = true;
+            else if (upwardFactor == 0)
+                wasStoppedFacingUp = false;
+            // Set lever forward.
+            if (forwardFactor != 0 && upwardFactor != 0)
+                leverForward = forwardFactor * transform.parent.forward + upwardFactor * transform.parent.up;
+            else
+            {
+                if (wasStoppedFacingUp)
+                    leverForward = -transform.parent.up;
+                else
+                    leverForward = transform.parent.forward;
+            }
+

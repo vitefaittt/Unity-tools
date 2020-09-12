@@ -1,0 +1,4 @@
+
+            GUI.enabled = false;
+            UnityEditor.EditorGUILayout.ObjectField("Script", UnityEditor.MonoScript.FromMonoBehaviour((HierarchySeparator)target), typeof(HierarchySeparator), false);
+            GUI.enabled = true;
